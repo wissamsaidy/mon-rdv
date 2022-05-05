@@ -83,4 +83,13 @@ export class Patient extends Utilisateur{
     }
 }
 
+export class Specialite{
+    constructor(
+        public id?: number,
+        public description?: string,
+        public nom?: string
+    ){
+    }
+}
+
 

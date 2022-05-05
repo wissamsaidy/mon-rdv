@@ -19,6 +19,8 @@ public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Long>
 	@Query("select p from Patient p")
 	List<Patient> findAllPatient();
 	
+	
+	
 	@Query("select a from Administrateur a")
 	List<Administrateur> findAllAdministrateur();	
 	

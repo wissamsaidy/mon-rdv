@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import sopra.monRdv.model.Praticien;
 import sopra.monRdv.model.Views;
+import sopra.monRdv.repository.IPraticienRepository;
 import sopra.monRdv.repository.IUtilisateurRepository;
 
 @RestController
@@ -29,14 +30,18 @@ public class PraticienRestController {
 
 	@Autowired
 	private IUtilisateurRepository utilisateurRepo;
+	
+	@Autowired
+	private IPraticienRepository pratRepo;
 
 	@GetMapping("")
-	@JsonView(Views.PraticientView.class)
+	@JsonView(Views.PraticienView.class)
 	public List<Praticien> findAll() {
 		return utilisateurRepo.findAllPraticien();
 	}
 
 	@GetMapping("/{id}")
+	@JsonView(Views.PraticienView.class)
 	public Praticien find(@PathVariable Long id) {
 
 		Optional<Praticien> optPraticien = utilisateurRepo.findPraticienById(id);
@@ -49,6 +54,7 @@ public class PraticienRestController {
 	}
 
 	@PostMapping("")
+	@JsonView(Views.PraticienView.class)
 	public Praticien create(@RequestBody Praticien praticien) {
 		praticien = utilisateurRepo.save(praticien);
 
@@ -56,22 +62,23 @@ public class PraticienRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.PraticienView.class)
 	public Praticien update(@RequestBody Praticien praticien, @PathVariable Long id) {
-		if (!utilisateurRepo.existsById(id)) {
+		if (!pratRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
 
-		praticien = utilisateurRepo.save(praticien);
+		praticien = pratRepo.save(praticien);
 
 		return praticien;
 	}
 
 	@DeleteMapping("/{id}")
+	@JsonView(Views.PraticienView.class)
 	public void delete(@PathVariable Long id) {
-		if (!utilisateurRepo.existsById(id)) {
+		if (!pratRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
-
-		utilisateurRepo.deleteById(id);
+		pratRepo.deleteById(id);
 	}
 }

@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 public abstract class Utilisateur {
 	@Id
 	@GeneratedValue
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	@Version
 	private int version;
@@ -32,6 +33,7 @@ public abstract class Utilisateur {
 	@Column(length = 100)
 	private String motDePasse;
 	@Embedded
+	@JsonView(Views.ViewCommon.class)
 	private Adresse adresse;
 
 	public Utilisateur() {
