@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PraticienHttpService } from './praticien-http.service';
+import { Praticien } from 'src/model';
 
 @Component({
   selector: 'app-praticien',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PraticienComponent implements OnInit {
 
-  constructor() { }
+  constructor(private praticienHttpService: PraticienHttpService) { }
 
   ngOnInit(): void {
+  }
+
+  list(): Array<Praticien>{
+    return this.praticienHttpService.findAll();
   }
 
 }

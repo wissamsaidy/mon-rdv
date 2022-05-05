@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Praticien;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IUtilisateurRepository;
 
 @RestController
@@ -28,6 +31,7 @@ public class PraticienRestController {
 	private IUtilisateurRepository utilisateurRepo;
 
 	@GetMapping("")
+	@JsonView(Views.PraticientView.class)
 	public List<Praticien> findAll() {
 		return utilisateurRepo.findAllPraticien();
 	}

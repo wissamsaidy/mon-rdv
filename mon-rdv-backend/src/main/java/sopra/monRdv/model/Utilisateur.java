@@ -9,6 +9,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 
@@ -19,10 +21,13 @@ public abstract class Utilisateur {
 	@Version
 	private int version;
 	@Column(length = 100)
+	@JsonView(Views.ViewCommon.class)
 	private String nom;
 	@Column(length = 100)
+	@JsonView(Views.ViewCommon.class)
 	private String prenom;
 	@Column(length = 255, unique = true)
+	@JsonView(Views.ViewCommon.class)
 	private String email;
 	@Column(length = 100)
 	private String motDePasse;

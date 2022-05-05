@@ -1,10 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Praticien } from 'src/model';
+import { GlobalService } from '../global.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PraticienHttpService {
-  // praticiens: Praticien
+  private apiUrl: string;
+  praticiens: Array<Praticien> = new Array<Praticien>();
 
-  constructor() { }
+  constructor(private httpClient: HttpClient, private globalService: GlobalService) {
+    this.apiUrl = globalService.backEndUrl + "praticien";
+    this.load();
+   }
+
+   findAll(): Array<Praticien>{
+     return this.praticiens;
+   }
+
+  load(){
+    this.httpClient.get<Array<Praticien>>(this.apiUrl).subscribe( response => this.praticiens = response);
+  }
 }

@@ -8,6 +8,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { PraticienComponent } from './praticien/praticien.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { SpecialiteComponent } from './specialite/specialite.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SpecialiteComponent } from './specialite/specialite.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
