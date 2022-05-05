@@ -20,16 +20,26 @@
 
 
 ////////////////////////////////Wissam
+export class UserDTO {
 
+    public login: string;
+    public password: string;
+    public utilisateur: Utilisateur;
+    public type: string;
 
+  constructor(
+    login?: string, 
+    password?: string, 
+    utilisateur?: Utilisateur, 
+    type?: string
+) {
+    this.login = login
+    this.password = password
+    this.utilisateur = utilisateur
+    this.type = type
+  }
 
-
-
-
-
-
-
-
+}
 
 /////////////////////////////////////////Lloyd
 export class Utilisateur{

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { Praticien } from 'src/model';
 import { GlobalService } from '../global.service';
 import { Observable } from 'rxjs';
@@ -40,6 +41,7 @@ export class PraticienHttpService {
    delete(id: number){
     this.httpClient.delete<void>(this.apiUrl + "/" + id).subscribe(() => {this.load});
   }
+
   load(){
     this.httpClient.get<Array<Praticien>>(this.apiUrl).subscribe( response => this.praticiens = response);
   }

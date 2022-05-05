@@ -1,1 +1,15 @@
-<p>authentification works!</p>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <form>
+        <input type="email" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)]="user.login">
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="mot de passe" [(ngModel)]="user.password">
+        <input type="submit" class="fadeIn fourth" (click)="login()">
+      </form>
+  
+    
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Mot de passe oublié?</a>
+      </div>
+  
+    </div>
+</div>
