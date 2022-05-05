@@ -13,7 +13,7 @@ insert into "lieu" ("code_postal", "id", "nom", "praticien_id", "rue", "version"
 insert into "lieu" ("code_postal", "id", "nom", "praticien_id", "rue", "version", "ville", "virtuel") values ('13000', '2', 'A mon bureau', '2', 'IHU méditeranné', 2, 'Marseille', false);
 insert into "lieu" ("code_postal", "id", "nom", "praticien_id", "rue", "version", "ville", "virtuel") values ('33300', '3', 'A mon cabinet', '1', 'cours Papin', 3, 'Mérignac', true);
 
-insert into "patient" ("code_postal", "date_naissance", "email", "id", "mot_de_passe", "nom", "numeross", "prenom", "rue", "telephone", "version", "ville") values ('78600', '1990-03-02', 'prisc.daoul@gmail.com', '0', 'password', 'Daoulas', NULL, 'Priscille', 'rue parigot', NULL, 0, 'Versaille');
+insert into "patient" ("code_postal", "date_naissance", "email", "id", "mot_de_passe", "nom", "numeross", "prenom", "rue", "telephone", "version", "ville") values ('78600', '1990-03-02', 'prisc.daoul@gmail.com', '0', 'password', 'Daoulas', NULL, 'Priscille', 'rue parigot', NULL, 0, 'Versailles');
 insert into "patient" ("code_postal", "date_naissance", "email", "id", "mot_de_passe", "nom", "numeross", "prenom", "rue", "telephone", "version", "ville") values ('33000', '1993-06-04', 'lloyd.wes@gmail.com', '1', 'password', 'Westbury', NULL, 'Lloyd', 'rue Thuyas', NULL, 0, 'Mérignac');
 insert into "patient" ("code_postal", "date_naissance", "email", "id", "mot_de_passe", "nom", "numeross", "prenom", "rue", "telephone", "version", "ville") values ('92000', '1992-05-02', 'quentin.bed@gmail.com', '2', 'password', 'Beduneau', NULL, 'Quentin', 'rue Martignas', NULL, 0, 'Martignas s/ Jalles');
 insert into "patient" ("code_postal", "date_naissance", "email", "id", "mot_de_passe", "nom", "numeross", "prenom", "rue", "telephone", "version", "ville") values ('93000', '1991-04-02', 'wissam.als@gmail.com', '3', 'password', 'ALSaidy', NULL, 'Wissam', 'rue Tour Eiffel', NULL, 0, 'Paris');
@@ -27,6 +27,9 @@ insert into "consultation" ("id", "motif_id", "nb_creneau", "patient_id", "prati
 insert into "creneau" ("consultation_id", "date_creneau", "dispo", "duree", "heure_creneau", "id", "lieu_id", "praticien_id", "version") values (NULL, '2022-05-06', true, 1, '10:00:00', '2', '0', '0', 0);
 insert into "creneau" ("consultation_id", "date_creneau", "dispo", "duree", "heure_creneau", "id", "lieu_id", "praticien_id", "version") values (NULL, '2022-05-06', true, 1, '10:15:00', '1', '0', '0', 0);
 
+insert into "specialite" ("description", "id", "nom", "version") values ('Psychologie', '0', 'Psychologie', 0);
+insert into "specialite" ("description", "id", "nom", "version") values ('Sport', '1', 'Sport', 0);
+insert into "specialite" ("description", "id", "nom", "version") values ('Généraliste', '2', 'Généraliste', 0);
 
 insert into "praticien_specialite" ("id", "praticien_id", "specialite_id", "version") values ('0', '0', '0', 0);
 insert into "praticien_specialite" ("id", "praticien_id", "specialite_id", "version") values ('1', '1', '1', 0);
