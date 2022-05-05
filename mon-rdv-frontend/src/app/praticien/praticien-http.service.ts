@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { Praticien } from 'src/model';
 import { GlobalService } from '../global.service';
 
@@ -19,6 +20,7 @@ export class PraticienHttpService {
      return this.praticiens;
    }
 
+  
   load(){
     this.httpClient.get<Array<Praticien>>(this.apiUrl).subscribe( response => this.praticiens = response);
   }
