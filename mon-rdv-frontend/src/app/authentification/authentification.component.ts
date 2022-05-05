@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDTO } from 'src/model';
+import { AuthentificationService } from './authentification.service';
 
 @Component({
-  selector: 'app-authentification',
+  selector: 'authentification',
   templateUrl: './authentification.component.html',
   styleUrls: ['./authentification.component.scss']
 })
 export class AuthentificationComponent implements OnInit {
 
-  constructor() { }
+  user: UserDTO;
+  loading = false;
 
-  ngOnInit(): void {
+  constructor(private authentificationService : AuthentificationService) { }
+
+  
+  ngOnInit(): void { 
   }
 
-}
+  login() {
+    this.loading = true;
+    this.authentificationService.login(this.user.login, this.user.password)
+    }
+  }

@@ -9,6 +9,7 @@ import { PraticienComponent } from './praticien/praticien.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { SpecialiteComponent } from './specialite/specialite.component';
 import {HttpClientModule} from '@angular/common/http';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
     AccueilComponent,
     PraticienComponent,
     AuthentificationComponent,
-    SpecialiteComponent
+    SpecialiteComponent,
+    UtilisateurComponent
   ],
   imports: [
     BrowserModule,
