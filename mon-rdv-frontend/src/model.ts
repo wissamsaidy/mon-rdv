@@ -92,4 +92,54 @@ export class Specialite{
     }
 }
 
+export class Lieu{
+    constructor(
+        public id?:number,
+        public code_postal?:string,
+        public rue?: string,
+        public ville?:string,
+        public virtuel?: boolean
+    ){
+
+    }
+}
+export class Consultation{
+    constructor(
+        public id?:number,
+        public nb_creneau?: number,
+        public statut?: string,
+        public motif?: Motif,
+        public patient?: Patient,
+        public praticient?:Praticien
+    ){
+
+    }
+}
+export class Motif{
+    constructor(
+        public id?:number,
+        public libelle?:string,
+        public nb_creneau?:number,
+        public praticient?:Praticien
+    ){
+
+    }
+}
+export class Creneau{
+    constructor(
+        public id?:number,
+        public date_creneau?: string,
+        public dispo?:boolean,
+        public duree?: number,
+        public heure_creneau?: string,
+        public consultation?: Consultation,
+        public lieu?: Lieu,
+        public praticien?: Praticien
+    ){}
+}
+
+
+
+
+
 

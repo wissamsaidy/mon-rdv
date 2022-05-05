@@ -10,6 +10,9 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { SpecialiteComponent } from './specialite/specialite.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PatientComponent } from './patient/patient.component';
+import { CreneauComponent } from './creneau/creneau.component';
+import { ConsultationComponent } from './consultation/consultation.component';
+import { LieuComponent } from './lieu/lieu.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { PatientComponent } from './patient/patient.component';
     PraticienComponent,
     AuthentificationComponent,
     SpecialiteComponent,
-    PatientComponent
+    PatientComponent,
+    CreneauComponent,
+    ConsultationComponent,
+    LieuComponent
   ],
   imports: [
     BrowserModule,
