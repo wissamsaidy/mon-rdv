@@ -1,11 +1,18 @@
 package sopra.monRdv.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Utilisateur;
+import sopra.monRdv.model.Views;
 
 public class UserDTO {
+	@JsonView(Views.ViewCommon.class)
 	private String login;
+	@JsonView(Views.ViewCommon.class)
 	private String password;
+	@JsonView(Views.ViewCommon.class)
 	private Utilisateur utilisateur;
+	@JsonView(Views.ViewCommon.class)
 	private String type;
 
 	public UserDTO() {

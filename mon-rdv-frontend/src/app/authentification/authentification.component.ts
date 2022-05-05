@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO } from 'src/model';
+import { ActivatedRoute } from '@angular/router';
+import { UserDTO, Utilisateur } from 'src/model';
 import { AuthentificationService } from './authentification.service';
 
 @Component({
@@ -9,10 +10,16 @@ import { AuthentificationService } from './authentification.service';
 })
 export class AuthentificationComponent implements OnInit {
 
-  user: UserDTO;
+  user: UserDTO = new UserDTO();
   loading = false;
+  authUser: Utilisateur;
 
-  constructor(private authentificationService : AuthentificationService) { }
+  id:string;
+  mdp:string;
+
+  constructor(private authentificationService : AuthentificationService, private route: ActivatedRoute) { 
+       
+  }
 
   
   ngOnInit(): void { 
@@ -20,6 +27,6 @@ export class AuthentificationComponent implements OnInit {
 
   login() {
     this.loading = true;
-    this.authentificationService.login(this.user.login, this.user.password)
+    this.authUser = this.authentificationService.login(this.user.login, this.user.password);
     }
   }

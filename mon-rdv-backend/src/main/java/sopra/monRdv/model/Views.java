@@ -9,5 +9,6 @@ public class Views {
 	public class PraticientView extends ViewCommon{};
 	public class PraticientDetailView extends ViewCommon{};
 	
-
+	;
+	public class AuthView extends ViewCommon{};
 }

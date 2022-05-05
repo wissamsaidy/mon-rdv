@@ -33,10 +33,10 @@ export class UserDTO {
     utilisateur?: Utilisateur, 
     type?: string
 ) {
-    this.login = login
-    this.password = password
-    this.utilisateur = utilisateur
-    this.type = type
+    this.login = login;
+    this.password = password;
+    this.utilisateur = utilisateur;
+    this.type = type;
   }
 
 }

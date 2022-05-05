@@ -1,0 +1,15 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <form #form action="authentification" method="POST">
+            <input type="email" id="login" class="fadeIn second" name="login" placeholder="login" value="id">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="mot de passe" value="mdp">
+            <input type="submit" class="fadeIn fourth" (click)="form.submit()">
+        </form>
+
+
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Mot de passe oublié?</a>
+        </div>
+
+    </div>
+</div>

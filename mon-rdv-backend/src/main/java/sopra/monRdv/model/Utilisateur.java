@@ -33,7 +33,7 @@ public abstract class Utilisateur {
 	@Column(length = 100)
 	private String motDePasse;
 	@Embedded
-	@JsonView(Views.ViewCommon.class)
+//	@JsonView(Views.ViewCommon.class)
 	private Adresse adresse;
 
 	public Utilisateur() {

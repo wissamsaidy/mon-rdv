@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Praticien } from 'src/model';
 import { GlobalService } from '../global.service';
-import { Observable } from 'rxjs';
 
 
 @Injectable({
